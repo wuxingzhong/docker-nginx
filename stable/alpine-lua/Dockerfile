@@ -73,9 +73,10 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 		geoip-dev \
 		perl-dev \
 		git \
-	    luajit-dev \
-		
-	&& apk add --no-cache --virtual .lua-rundeps luajit \
+	    luajit-dev-2.1.0_beta3-r4 \
+	&& apk add --no-cache --virtual .lua-rundeps luajit-2.1.0_beta3-r4 \
+    && export LUAJIT_LIB=/usr/lib \
+    && export LUAJIT_INC=/usr/include/luajit-2.1 \
 	&& curl -fSL https://nginx.org/download/nginx-$NGINX_VERSION.tar.gz -o nginx.tar.gz \
 	&& curl -fSL https://nginx.org/download/nginx-$NGINX_VERSION.tar.gz.asc  -o nginx.tar.gz.asc \
 	&& export GNUPGHOME="$(mktemp -d)" \
