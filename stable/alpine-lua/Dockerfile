@@ -51,6 +51,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 		--with-file-aio \
 		--with-http_v2_module \
 		--with-ld-opt='-Wl,-rpath,/usr/lib' \
+		--with-debug \
         --add-module=/usr/src/ngx_devel_kit \
         --add-module=/usr/src/lua-nginx-module \
 	" \
